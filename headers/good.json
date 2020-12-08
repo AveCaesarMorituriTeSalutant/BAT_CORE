@@ -1,0 +1,133 @@
+{
+    "x-frame-options": {
+        "title": "X-Frame-Options",
+        "description": "X-Frame-Options indicates to browser if the website can be framed or not. It protect against clickjacking attacks",
+        "refs": [
+			"https://tools.ietf.org/html/rfc7034",
+			"https://caniuse.com/#feat=x-frame-options",
+			"https://github.com/AveCaesarMorituriTeSalutant/bat/blob/master/docs/headers.md#x-frame-options",
+            "https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xfo",
+			"https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Clickjacking_Defense_Cheat_Sheet.md",
+			"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options",
+			"https://www.troyhunt.com/clickjack-attack-hidden-threat-right-in/"
+        ]
+    },
+	"x-content-type-options": {
+		"title": "X-Content-Type-Options",
+		"description": "Indicates to browser to doens't mime-sniff the content-type of the response and uses wich the server sent",
+		"refs": [
+			"https://github.com/AveCaesarMorituriTeSalutant/bat/blob/master/docs/headers.md#x-content-type-options",
+			"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options",
+            "https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xcto"
+		]
+	},
+	"x-xss-protection": {
+		"title": "X-XSS-Protection",
+		"description": "This header enable the XSS Reflected filter in the browsers. It can block, sanitize or interprete the response",
+		"refs": [
+			"https://github.com/AveCaesarMorituriTeSalutant/bat/blob/master/docs/headers.md#x-xss-protection",
+			"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection",
+            "https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xxxsp"
+		]
+	},
+	"referrer-policy": {
+		"title": "Referrer-Policy",
+		"description": "Sets which information will be sent in Referer header",
+		"refs": [
+			"https://w3c.github.io/webappsec-referrer-policy/",
+			"https://caniuse.com/#feat=referrer-policy",
+            "https://github.com/AveCaesarMorituriTeSalutant/bat/blob/master/docs/headers.md#referrer-policy",
+            "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy",
+            "https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#rp",
+            "https://scotthelme.co.uk/a-new-security-header-referrer-policy/"
+		]
+	},
+    "x-download-options": {
+        "title": "X-Download-Options",
+        "description": "In IE it prevents downloaded files to be directly opened in the browser forcing user to save it and them open in any application.",
+        "refs": [
+            "https://github.com/AveCaesarMorituriTeSalutant/bat/blob/master/docs/headers.md#x-download-options",
+            "http://www.nwebsec.com/HttpHeaders/SecurityHeaders/XDownloadOptions",
+            "https://blog.giantgeek.com/?p=788"
+        ]
+    },
+    "x-permitted-cross-domain-policies": {
+        "title": "X-Permitted-Cross-Domain-Policies",
+        "description": "Apply a policy to some clients (mainly Adobe products, as flash player) to access or not a content",
+        "refs": [
+            "https://www.adobe.com/devnet-docs/acrobatetk/tools/AppSec/xdomain.html",
+            "https://github.com/AveCaesarMorituriTeSalutant/bat/blob/master/docs/headers.md#x-permitted-cross-domain-policies",
+            "https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xpcdp"
+        ]
+    },
+    "clear-site-data": {
+        "title": "Clear-Site-Data",
+        "description": "Instruct browser to clear the site's local storage data. It's very usefull to a page like '/logout'",
+        "refs": [
+            "https://www.w3.org/TR/clear-site-data/",
+            "https://github.com/AveCaesarMorituriTeSalutant/bat/blob/master/docs/headers.md#clear-site-data",
+            "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Clear-Site-Data",
+            "https://scotthelme.co.uk/a-new-security-header-clear-site-data/"
+        ]
+    },
+    "strict-transport-security": {
+        "title": "HTTP Strict Transport Security [HSTS]",
+        "description": "Instruct browser to navigate only via HTTPS and save it for future requests",
+        "refs": [
+            "https://tools.ietf.org/html/rfc6797",
+            "https://caniuse.com/#feat=stricttransportsecurity",
+            "https://github.com/AveCaesarMorituriTeSalutant/bat/blob/master/docs/headers.md#strict-transport-security",
+            "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security",
+            "https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.md",
+            "https://hstspreload.org"
+        ]
+    },
+    "public-key-pins": {
+        "title": "Public-Key-Pins",
+        "description": "Treat website as valid only if that HTTPS certificate match a hash in this list",
+        "refs": [
+            "https://tools.ietf.org/html/rfc7469",
+            "https://caniuse.com/#feat=publickeypinning",
+            "https://github.com/AveCaesarMorituriTeSalutant/bat/blob/naster/docs/headers.md#public-keys-pins",
+            "https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning",
+            "https://scotthelme.co.uk/hpkp-http-public-key-pinning/"
+        ]
+    },
+    "feature-policy": {
+        "title": "Feature-Policy",
+        "description": "Request to browser which APIs to enable or disable",
+        "refs": [
+            "https://w3c.github.io/webappsec-feature-policy/",
+            "https://caniuse.com/#feat=feature-policy",
+            "https://github.com/AveCaesarMorituriTeSalutant/bat/blob/master/docs/headers.md#feature-policy",
+            "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy",
+            "https://scotthelme.co.uk/a-new-security-header-feature-policy/"
+        ]
+    },
+    "except-ct": {
+        "title": "Except-CT",
+        "description": "Determine if your site expect and use Certificate Transparency feature",
+        "refs": [
+            "https://tools.ietf.org/html/draft-ietf-httpbis-expect-ct-08",
+            "https://tools.ietf.org/html/rfc6962",
+            "https://www.certificate-transparency.org",
+            "https://github.com/AveCaesarMorituriTeSalutant/bat/blob/master/docs/headers.md#except-ct",
+            "https://httpwg.org/http-extensions/expect-ct.html",
+            "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT",
+            "https://scotthelme.co.uk/certificate-transparency-an-introduction/",
+            "https://scotthelme.co.uk/a-new-security-header-expect-ct/"
+        ]
+    },
+    "content-security-policy": {
+        "title": "Content-Security-Policy",
+        "description": "It defines from where browser can load content such as JavaScript",
+        "refs": [
+            "https://www.w3.org/TR/CSP/",
+            "https://content-security-policy.com",
+            "https://caniuse.com/#search=csp",
+            "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP",
+            "https://www.owasp.org/index.php/Content_Security_Policy",
+            "https://scotthelme.co.uk/content-security-policy-an-introduction/"
+        ]
+    }
+}

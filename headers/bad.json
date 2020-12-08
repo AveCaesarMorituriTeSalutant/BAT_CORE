@@ -1,0 +1,133 @@
+{
+    "server": {
+        "title": "Server",
+        "description": "Server headers show information about the software used to provide the website. Show software's version it's a lot information to give to attackers.",
+        "condition": true,
+        "refs": [
+			"https://tools.ietf.org/html/rfc2616#section-14.38",
+			"https://github.com/AveCaesarMorituriTeSalutant/bat/blob/master/docs/headers.md#servers"
+        ]
+    },
+    "set-cookie": [
+        {
+            "title": "Cookie not HTTP Only",
+            "description": "Using the flag 'HttpOnly' the cookie won't be read from JavaScript only sent by HTTP",
+            "condition": "^((?!httponly).)*$",
+            "refs": [
+				"https://tools.ietf.org/html/rfc6265#section-5.2.6",
+				"https://github.com/AveCaesarMorituriTeSalutant/bat/blob/docs/headers.md#httponly",
+				"https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Session_Management_Cheat_Sheet.md#httponly-attribute",
+				"https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies",
+				"https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md#bonus-rule-1-use-httponly-cookie-flag",
+				"https://www.owasp.org/index.php/HttpOnly"
+            ]
+        },
+        {
+            "title": "Cookie not over SSL/TLS",
+            "description": "Using the flag 'Secure' the cookie will be sent only in HTTPS traffic avoiding MITM read its content",
+            "condition": "^((?!secure).)*$",
+            "refs": [
+				"https://tools.ietf.org/html/rfc6265#section-5.2.5",
+				"https://github.com/AveCaesarMorituriTeSalutant/bat/blob/docs/headers.md#secure",
+				"https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Session_Management_Cheat_Sheet.md#secure-attribute",
+				"https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies",
+				"https://www.owasp.org/index.php/SecureFlag"
+            ]
+        },
+		{
+			"title": "Cookie not only from SameSite",
+			"description": "Samesite cookies tells to browser send the cookie only in requests initiated from the same domain. It avoid CSRF attacks",
+			"condition": "^((?!samesite).)*$",
+			"refs": [
+				"https://tools.ietf.org/html/draft-west-first-party-cookies-07",
+				"https://caniuse.com/#feat=same-site-cookie-attribute",
+				"https://www.owasp.org/index.php/SameSite"
+			]
+		}
+    ],
+	"referrer-policy": {
+        "title": "Referrer-Policy with bad practices",
+        "description": "This site use unsafe-url in Referrer-Policy header. Because of this browsers will always send the full URL in any request to any origin",
+        "condition": "unsafe-url",
+        "refs": [
+			"https://w3c.github.io/webappsec-referrer-policy/",
+            "https://github.com/AveCaesarMorituriTeSalutant/bat/blob/master/docs/headers.md#referrer-policy",
+            "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy",
+            "https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#rp",
+            "https://scotthelme.co.uk/a-new-security-header-referrer-policy/"
+        ]
+    },
+    "x-permitted-cross-domain-policies": {
+        "title": "X-Permitted-Cross-Domain-Policies too open",
+        "description": "The most secure option to X-Permitted-Cross-Domain-Policies is none, make sure you really need other option",
+        "condition": "^((?!all).)*$",
+        "refs": [
+            "https://www.adobe.com/devnet-docs/acrobatetk/tools/AppSec/xdomain.html",
+            "https://github.com/AveCaesarMorituriTeSalutant/bat/blob/master/docs/headers.md#x-permitted-cross-domain-policies",
+            "https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xpcdp"
+        ]
+    },
+    "strict-transport-security": [
+        {
+            "title": "HSTS without includeSubDomains",
+            "description": "It's recommended protect all the subdomains using HTTPS as well",
+            "condition": "^((?!includesubdomains).)*$",
+            "refs": [
+                "https://tools.ietf.org/html/rfc6797",
+                "https://caniuse.com/#feat=stricttransportsecurity",
+                "https://github.com/AveCaesarMorituriTeSalutant/bat/blob/master/docs/headers.md#http-strict-transport-security",
+                "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security",
+                "https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.md"
+            ]
+        },
+        {
+            "title": "HSTS without preload",
+            "description": "It's much better secure configure the domain under HSTS preload list in the browser",
+            "condition": "^((?!preload).)*$",
+            "refs": [
+                "https://hstspreload.org",
+                "https://tools.ietf.org/html/rfc6797",
+                "https://caniuse.com/#feat=stricttransportsecurity",
+                "https://github.com/AveCaesarMorituriTeSalutant/bat/blob/master/docs/headers.md#http-strict-transport-security",
+                "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security",
+                "https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.md"
+            ]
+        }
+    ],
+    "access-control-allow-origin": {
+        "title": "Access-Control-Allow-Origin too open",
+        "description": "Using Access-Control-Allow-Origin with option '*' are too open because any website can request the content",
+        "condition": "\\*",
+        "refs": [
+            "https://github.com/AveCaesarMorituriTeSalutant/bat/blob/master/docs/headers.md#access-control-allow-origin",
+            "https://caniuse.com/#feat=cors",
+            "https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Access-Control-Allow-Origin",
+            "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS"
+        ]
+    },
+    "public-key-pins": {
+        "title": "Public-Key-Pins without a backup key",
+        "description": "Using Public-Key-Pins with only one key is dangerous because if you lost your key (CA hacked, renew...) the user can't access the site with the new key once the browser will not accept that",
+        "condition": "^(?!.*pin-sha256.*pin-sha256)",
+        "refs": [
+            "https://tools.ietf.org/html/rfc7469",
+            "https://caniuse.com/#feat=publickeypinning",
+            "https://github.com/AveCaesarMorituriTeSalutant/bat/blob/naster/docs/headers.md#public-keys-pins",
+            "https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning",
+            "https://scotthelme.co.uk/hpkp-http-public-key-pinning/"
+        ]
+    },
+    "content-security-policy": {
+        "title": "Content-Security-Policy too permisive",
+        "description": "Using 'unsafe-inline' reduces the effectiveness of CSP, prefer using Nonce or Hash",
+        "condition": "unsafe-inline",
+        "refs": [
+            "https://www.w3.org/TR/CSP/",
+            "https://content-security-policy.com",
+            "https://caniuse.com/#search=csp",
+            "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP",
+            "https://www.owasp.org/index.php/Content_Security_Policy",
+            "https://scotthelme.co.uk/content-security-policy-an-introduction/"
+        ]
+    }
+}
