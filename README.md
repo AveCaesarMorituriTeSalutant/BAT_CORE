@@ -11,7 +11,7 @@
 Until now **BAT** checks the website headers and recommends how to make it better.
 ## Dependences
 
-* [Python 3](https://www.python.org/download/releases/3.0/)
+* [Python 3.9](https://www.python.org/downloads/release/python-390)
 
 ## Usage
 
