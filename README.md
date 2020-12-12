@@ -102,9 +102,9 @@ optional arguments:
 
 For now the output is only in normal mode. Understant it as follows:
 
-* <span style="color: green">[-] Green Headers are good headers that is already used in your website. It's shown when use `-s` flag.
+* <span style="color: green">[+] Green Headers are good headers that is already used in your website. It's shown when use `-s` flag.
 * <span style="color: blue;">[+] Blue Headers are good headers that is not applied on your website. We recommend apply them.
-* <span style="color: magenta;">[+] Magenta Headers are bad headers that open a breach on your website or maybe show a lots of information. We recommend fix it.
+* <span style="color: magenta;">[-] Magenta Headers are bad headers that open a breach on your website or maybe show a lots of information. We recommend fix it.
 
 Example:
 
