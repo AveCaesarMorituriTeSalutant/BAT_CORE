@@ -25,7 +25,7 @@ BANNERS = [
 
 
                                                             GitHub - AveCaesarMorituriTeSalutant
-                                                            WebPage - bat.in.ua
+                                                            WebPage - batt.gq
 
                                                             Created by Islamov Magomed
 """
